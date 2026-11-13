@@ -11,24 +11,40 @@ https://satisfaction-portal-d0bjcfbf4087-1468353816.tcloudbaseapp.com/fire-month
 
 ## 同事怎么用（没有精益文化仓库也可以）
 
-### 1. 安装技能到 Cursor
+### 1. 安装技能（Cursor / WorkBuddy 都行）
 
-**推荐：个人技能（所有项目可用）**
+先克隆：
 
 ```powershell
-# 克隆本仓库到任意目录，例如 Desktop
 git clone https://github.com/AnShanbank/mashangyou-h5-portal-skill.git
+cd mashangyou-h5-portal-skill
+```
 
-# 复制技能文件夹到 Cursor 个人 skills
-$src = ".\mashangyou-h5-portal-skill\mashangyou-h5-portal"
+**Cursor**（拷到个人 skills）：
+
+```powershell
+$src = ".\mashangyou-h5-portal"
 $dst = "$env:USERPROFILE\.cursor\skills\mashangyou-h5-portal"
 New-Item -ItemType Directory -Force -Path "$env:USERPROFILE\.cursor\skills" | Out-Null
 Copy-Item -Recurse -Force $src $dst
 ```
 
-装好后应存在：`%USERPROFILE%\.cursor\skills\mashangyou-h5-portal\SKILL.md`
+装好后应有：`%USERPROFILE%\.cursor\skills\mashangyou-h5-portal\SKILL.md`
 
-然后**新开一个 Agent 对话**。
+**WorkBuddy**（路径不同，技能内容相同）：
+
+```powershell
+$src = ".\mashangyou-h5-portal"
+$dst = "$env:USERPROFILE\.workbuddy\skills\mashangyou-h5-portal"
+New-Item -ItemType Directory -Force -Path "$env:USERPROFILE\.workbuddy\skills" | Out-Null
+Copy-Item -Recurse -Force $src $dst
+```
+
+装好后应有：`%USERPROFILE%\.workbuddy\skills\mashangyou-h5-portal\SKILL.md`
+
+也可在 WorkBuddy 里直接说：先阅读本仓库再按码上游样式做 H5。
+
+然后**新开一轮对话**再下任务。
 
 ### 2. 跟 Agent 说
 
